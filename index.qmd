@@ -1,0 +1,51 @@
+---
+title: "my first slice"
+format: revealjs
+editor: visual
+echo: true
+---
+
+## Loading data
+
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(gapminder)
+```
+
+
+```{r}
+#| echo: true
+
+gapminder
+```
+
+---
+
+## Preprocess data
+
+we will filter data from 2007
+```{r}
+#| echo: true
+library(tidyverse)
+gapminder_2007 <- gapminder |> 
+  filter(year == 2007)
+```
+
+---
+## Plot the data
+
+we will plot the data
+```{r}
+#| code-fold: true
+library(ggplot2)
+ggplot(gapminder_2007) + geom_point(aes(x= lifeExp, y = gdpPercap, color = continent))
+```
+
+
+
+
+
